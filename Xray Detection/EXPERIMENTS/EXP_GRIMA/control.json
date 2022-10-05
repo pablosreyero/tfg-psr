@@ -1,0 +1,16 @@
+{
+ "control_im_train": [
+  "/Castings/C0007/C0007_0007.png",
+  "/Castings/C0019/C0019_0029.png",
+  "/Castings/C0036/C0036_0032.png",
+  "/Castings/C0007/C0007_0031.png",
+  "/Castings/C0042/C0042_0033.png"
+ ],
+ "control_im_val": [
+  "/Castings/C0007/C0007_0023.png",
+  "/Castings/C0033/C0033_0022.png",
+  "/Castings/C0045/C0045_0053.png",
+  "/Castings/C0021/C0021_0026.png",
+  "/Castings/C0030/C0030_0025.png"
+ ]
+}

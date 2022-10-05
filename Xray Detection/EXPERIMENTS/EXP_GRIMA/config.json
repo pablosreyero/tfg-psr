@@ -1,0 +1,105 @@
+{
+ "bb_config": {
+   "architecture": "ResNet",
+   "selection": "ResNet101",
+   "input_prepro_mode": "tf",
+   "original_weights_source": "coco",
+   "bb_weights": "../../PRETRAINED_MODELS/resnet101.h5",
+   "last_conv": false,
+   "train_bb": true,
+   "bb_initializer": "normal"
+ },
+ "fpn_config": {
+   "strides": [16],
+   "min_level": 2,
+   "max_level": 6
+ },
+ "rpn_config": {
+   "train_rpn": true,
+   "original_weights_source": "coco",
+   "rpn_layers_weights":  "../../PRETRAINED_MODELS/mask_rcnn_coco.h5",
+   "num_regions": 256,
+   "rpn_nms_th": 0.7,
+   "positive_balance_rpn": false
+ },
+ "classifier_config": {
+   "class_layers_weights":  "../../PRETRAINED_MODELS/mask_rcnn_coco.h5",
+   "class_mode": "binary",
+   "class_mapping": {
+    "DEF": 0,
+    "bg": 1
+   },
+   "num_rois": 200,
+   "max_boxes": 150,
+   "class_nms_th": 0.3,
+   "classifier_min_overlap": 0.1,
+   "classifier_max_overlap": 0.5,
+   "std_scaling": 1.0,
+   "classifier_regr_std": [
+    8.0,
+    8.0,
+    4.0,
+    4.0
+   ]
+ },
+ "anchors_config": {
+   "anchor_ratios": [
+    [
+     1,
+     1
+    ],
+    [
+     0.707,
+     1.414
+    ],
+    [
+     1.414,
+     0.707
+    ]
+   ],
+   "anchor_scales": [16, 32, 64, 128, 256],
+   "anchor_per_octave": [1.0],
+   "gt_min_overlap": 0.3,
+   "gt_max_overlap": 0.7
+ },
+ "data_config": {
+   "data_source": "GRIMA",
+   "source_data_directory": "../../DATA_SOURCE_GRIMA",
+   "data_lists_directory": "../../DATA_LISTS/DATA_LISTS_GRIMA",
+   "database_path": "../../DATABASES/global.db",
+   "channels": 3,
+   "ch_transformation": "grima",
+   "mean_ch_level": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cropping": false,
+   "pos_crop": false,
+   "padding": true,
+   "resizing": true,
+   "crop_size": 768,
+   "new_size": 768
+ },
+ "learning_config": {
+   "gpu": "/device:GPU:0",
+   "optimizer": "SGD",
+   "learning_rate": 1e-03,
+   "momentum": 0.9,
+   "regularization": false,
+   "w_decay": 0.0001,
+   "epoch_length_train": 1,
+   "epoch_length_val": 1,
+   "num_epochs": 500000
+ },
+ "loss_config": {
+   "positivs_balance_class": true,
+   "pos_ratio": 0.33,
+   "balanced_classes": true,
+   "lambda_rpn_regr": 1.0,
+   "lambda_rpn_class": 1.0,
+   "lambda_cls_regr": 1.0,
+   "lambda_cls_class": 1.0,
+   "epsilon": 1e-08
+ }
+}
