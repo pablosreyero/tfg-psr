@@ -1,2 +1,2 @@
 # tfg-psr
-Detección de defectos en imágenes de fundición.
+Detection of defects in casting images
