@@ -1,2 +1,2 @@
 # tfg-psr
-Detection of defects in casting images
+Detection of defects in casting images.
